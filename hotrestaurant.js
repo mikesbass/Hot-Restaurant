@@ -17,15 +17,31 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
 var newGuest= [{
-	name: "Charles ",
-	phoneNumber: "555-5555",
-	email: "charles@hotmail.com",
-	uniqueID: "1"
+  name: "Charles ",
+  phoneNumber: "555-5555",
+  email: "charles@hotmail.com",
+  uniqueID: "1"
 }]
+
+var waitlist = [{
+  name: "John",
+  phoneNumber: "555-5555",
+  email: "john@hotmail.com"
+  uniqueID: "2"
+}]
+
 
 
 // Create New Guest, add to new guests - takes in JSON input
 app.put("/api/newGuest/:newGuestID", function(req, res) {
+  var guestList = newGuest.length;
+
+  if(guestList === 5){
+    
+    }else{
+
+    }
+
   var newGuestID = req.params.newGuest;
 
   newGuest.routeName = newGuest.name.replace(/\s+/g, "").toLowerCase();
@@ -33,8 +49,9 @@ app.put("/api/newGuest/:newGuestID", function(req, res) {
   newGuest.push(newGuestID);
 
   res.json(newGuestID);
+     }
 });
-
+} 
 
 
 //*routes for html
@@ -49,6 +66,12 @@ app.get("/makeReservation", function(req, res) {
 app.get("/viewTable.html", function(req, res) {
   res.sendFile(path.join(__dirname, "viewTable.html"));
 });
+
+
+app.get("/testing", function(req, res) {
+  res.redirect("/");
+});
+
 
 // Search for waitlist - provides JSON
 app.get("/api/:waitlist", function(req, res) {
