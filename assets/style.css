@@ -1,0 +1,22 @@
+body {
+	background-color: #400080;
+}
+
+.jumbotron {
+	background: url(http://blogs.thenews.com.pk/blogs/wp-content/uploads/2012/05/dining.jpg);
+	width: 100%;
+	height: 100%;
+	background-size: cover;                   
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.jumbotron h1 {
+	color: #fff;
+}
+
+.jumbotron h3 {
+	color: #fff;
+}
+
+
